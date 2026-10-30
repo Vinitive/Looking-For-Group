@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0e12"><meta name="description" content="Find your next squad. Browse game lobbies, meet players, and get into the game.">
+  <title>Looking For Group — Find Your Squad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">LFG<span>+</span></span><span class="brand-name">LOOKING FOR<br><b>GROUP</b></span></a>
+    <nav><a class="active" href="#discover">Discover</a><a href="#games">Games</a><a href="#how">How it works</a></nav>
+    <div class="header-actions"><button class="btn btn-quiet" id="loginBtn">Log in</button><button class="btn btn-primary" id="signupBtn">Create account <span>↗</span></button><button class="avatar hidden" id="profileBtn">U</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><i></i> YOUR NEXT SQUAD STARTS HERE</div>
+        <h1>LESS SEARCHING.<br><span>MORE PLAYING.</span></h1>
+        <p>Find your people, build your squad, and jump into the games you love. One place to find players across every platform.</p>
+        <div class="hero-actions"><a class="btn btn-primary btn-large" href="#discover">Find a group <span>→</span></a><button class="btn btn-outline btn-large" id="heroCreate">Create a lobby <span>＋</span></button></div>
+        <div class="hero-proof"><div class="proof-avatars"><b>G</b><b>M</b><b>K</b><b>+</b></div><span><strong>Every game. Every platform.</strong><br>There's a squad out there for you.</span></div>
+      </div>
+      <div class="hero-art"><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div><div class="hero-emblem"><span class="emblem-top">SQUAD UP</span><strong>LFG</strong><span class="emblem-bottom">FIND YOUR PEOPLE</span></div><div class="float-card card-top"><span class="live-dot"></span> LOBBIES OPEN <b>24/7</b></div><div class="float-card card-bottom"><span class="mini-icon">⌁</span><div><b>YOUR CREW IS OUT THERE</b><small>Go find them.</small></div></div></div>
+    </section>
+    <section class="ticker"><span>FIND YOUR SQUAD</span><i>✳</i><span>PLAY YOUR WAY</span><i>✳</i><span>ALL PLATFORMS</span><i>✳</i><span>GOOD GAMES. GOOD PEOPLE.</span><i>✳</i><span>FIND YOUR SQUAD</span></section>
+    <section class="section" id="discover">
+      <div class="section-heading"><div><div class="eyebrow">THE COMMUNITY</div><h2>FIND A <span>LOBBY.</span></h2><p>Real players. Real groups. Your next game is one click away.</p></div><button class="btn btn-primary" id="createBtn">＋ Create lobby</button></div>
+      <div class="filters"><label class="searchbox"><span>⌕</span><input id="searchInput" placeholder="Search games, modes, or players..."></label><select id="platformFilter"><option value="">All platforms</option><option>PC</option><option>Xbox</option><option>PlayStation</option><option>Crossplay</option></select><select id="modeFilter"><option value="">All game modes</option><option>Casual</option><option>Competitive</option><option>Co-op</option><option>Ranked</option><option>Any</option></select></div>
+      <div class="lobby-meta"><span><i class="live-dot"></i> <b id="lobbyCount">0</b> LOBBIES LOOKING FOR PLAYERS</span><span class="sort-label">NEWEST FIRST</span></div>
+      <div class="lobby-grid" id="lobbyGrid"></div><div class="empty-state hidden" id="emptyState"><div>⌁</div><h3>NO LOBBIES FOUND</h3><p>Try another search or be the first to start a group.</p><button class="btn btn-primary" id="emptyCreate">Create a lobby</button></div>
+    </section>
+    <section class="games-section" id="games"><div class="section-heading"><div><div class="eyebrow">PICK YOUR GAME</div><h2>WHAT ARE WE <span>PLAYING?</span></h2><p>Choose a game and find players ready to jump in.</p></div><span class="catalog-count">GAME CATALOG <b>06</b></span></div><div class="game-grid" id="gameGrid"></div></section>
+    <section class="how-section" id="how"><div class="eyebrow">IT'S THAT SIMPLE</div><h2>FROM SOLO TO <span>SQUAD.</span></h2><div class="steps"><article><b>01</b><div class="step-icon">⌕</div><h3>FIND YOUR GAME</h3><p>Browse the catalog and find a lobby that matches your game, platform, and playstyle.</p></article><article><b>02</b><div class="step-icon">＋</div><h3>JOIN THE LOBBY</h3><p>See who's hosting, how many spots are open, and what the group is looking to play.</p></article><article><b>03</b><div class="step-icon">↗</div><h3>CONNECT & PLAY</h3><p>Connect through Discord, Xbox, or PlayStation and get the party started.</p></article></div></section>
+    <section class="cta"><div><div class="eyebrow">DON'T WAIT FOR THE INVITE</div><h2>YOUR NEXT GREAT<br><span>GAME STARTS HERE.</span></h2></div><button class="btn btn-primary btn-large" id="ctaCreate">Start a lobby <span>→</span></button></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">LFG<span>+</span></span><span class="brand-name">LOOKING FOR<br><b>GROUP</b></span></a><span>BUILT FOR PLAYERS. POWERED BY COMMUNITY.</span><span>© 2026 LOOKING FOR GROUP</span></footer>
+  <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></section></div>
+  <div class="toast" id="toast"></div>
+  <script src="config.js"></script><script src="app.js"></script>
+</body></html>
