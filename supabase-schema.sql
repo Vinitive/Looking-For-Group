@@ -10,6 +10,8 @@ create table if not exists public.profiles (
 create table if not exists public.lobbies (
   id uuid primary key default gen_random_uuid(),
   owner_id uuid not null references auth.users(id) on delete cascade,
+  host text not null default 'Player',
+  players integer not null default 1 check (players >= 1),
   game text not null,
   title text not null check (char_length(title) between 3 and 65),
   description text not null default '' check (char_length(description) <= 240),
